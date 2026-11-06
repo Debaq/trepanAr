@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trepanar"
+version = "1.0.0"
+description = "Explora un cerebro real (Human Organ Atlas) con una sonda de movimiento sobre un cráneo de plástico"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"  # zarr 3 pide >=3.11; compresso trae binarios hasta 3.13
+# Licencia del código: por definir. Datos: CC BY 4.0 (Human Organ Atlas), se descargan aparte.
+authors = [
+  { name = "Nicolás Baier-Quezada" },
+  { name = "Vanessa Uribe-Hernández" },
+  { name = "Fernanda López-Moncada" },
+  { name = "Benjamín Catipillán-Ulloa" },
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "opencv-python-headless>=4.8",
+  "pygame>=2.5",
+  "pyserial>=3.5",
+  "zarr>=3",
+  "fsspec>=2024.2",
+  "aiohttp>=3.9",
+  "requests>=2.31",
+  "compresso>=3.3",
+]
+
+[project.optional-dependencies]
+binario = ["pyinstaller>=6.5"]
+
+[project.scripts]
+trepanar = "trepanar:main"
+
+[tool.setuptools]
+py-modules = ["trepanar", "paquetes", "instalador", "vista3d"]

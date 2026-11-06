@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.egg-info/
+.venv/
+
+# Binario y construcción
+build_pyi/
+dist/
+firmware/build/
+
+# Respaldo del firmware de fábrica (volcado completo de la flash, puede traer datos de la placa)
+firmware/respaldo/
+
+# Datos: cerebros descargados, calibraciones de cada sonda y grabaciones
+datos/
+*.npy
+*.tif
